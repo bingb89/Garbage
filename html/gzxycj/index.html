@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>贵州福彩官方微信幸运大抽奖活动</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css" >
+    <link rel="stylesheet" type="text/css" href="css/zoom.css">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container" id="container">
+    <p class="blank"><img class="resize" src="images/1.jpg" /></p>
+    <p class="lottery"><a href="javascript:void(0)" id="inActive"><img src="images/lottery-btn.png"></a></p>
+</div>
+<div class="content" id="content">
+  <div class="active">
+    <div class="active_c">
+      <form role="form" class="form-inline">
+        <div class="form-group" id="options">
+          <h4><span class="star">*</span> 玩法：</h4>
+          <label for="active1"><input type="radio" name="activeOption" id="active1" value="双色球" checked="checked" />双色球 </label>
+          <label for="active2"><input type="radio" name="activeOption" id="active2" value="快三" />快三 </label>
+          <label for="active3"><input type="radio" name="activeOption" id="active3" value="七乐彩" />七乐彩 </label>
+          <label for="active4"><input type="radio" name="activeOption" id="active4" value="3D" />3D </label>
+        </div>
+        <div class="form-group">
+          <label><span class="star">*</span> 投注站编号：</label>
+            <input type="tel" name="activeNum" class="form-control" id="numberCheck" placeholder="请输入8位数字投注机号" />
+            <p class="star"></p>
+        </div>
+        <div class="form-group">
+          <label><span class="star">*</span> 销售期号：</label>
+            <select class="form-control" id="select">
+              <option>20151014</option>
+              <option>20151015</option>
+              <option>20151016</option>
+              <option>20151017</option>
+              <option>20151018</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <label><span class="star">*</span> 流水号：</label>
+            <input type="text" name="numberSerial" id="numberSerial" class="form-control" placeholder="填写号码需与真实彩票一致" />
+            <p class="star"></p>
+        </div>
+        <div class="imgs">
+          <p><img src="images/ssq_py.jpg" width="50%" data-action="zoom" /></p>
+          <p><img src="images/k3_py.jpg" width="50%" data-action="zoom" /></p>
+          <p><img src="images/qlc_py.jpg" width="50%" data-action="zoom" /></p>
+          <p><img src="images/3D_py.jpg" width="50%" data-action="zoom" /></p>
+        </div>
+        <div class="btn-modal">
+          <a href="javascript:void(0)" class="btn btn-primary btn-mid" id="role">查看活动规则</a>
+          <a href="javascript:void(0)" class="btn btn-success btn-mid" id="submit">提　交</a>
+        </div>
+        <div class="tip">
+          <p><span>提示：</span><br />
+              一个微信号、一个手机号可登记多张彩票以提高中奖几率，各奖等可兼中兼得，一张彩票只能登记一次。</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/base.js"></script>
+<script src="js/zoom.js"></script>
+</body>
+</html>

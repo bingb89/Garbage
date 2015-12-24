@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> ajax 提交 </title>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+ 
+ 
+  <script type="text/javascript" src="js/jquery.min.js"></script> 
+ </head>
+ 
+ <body>
+ 
+<input name="txt_name" id="txt_name" type="text" value="">
+<input name="txt_age"  id="txt_age" type="text" value="">
+<input type="button" onclick="btnClick();" value="提交">
+ 
+ 
+ 
+<script type="text/javascript"> 
+     
+    function btnClick(){
+        var txtName = $('#txt_name').val();
+        var txtAge = $('#txt_age').val();
+        dataVal={txt_name:txtName,txt_age:txtAge};
+        $.ajax({
+           type: "GET",
+           url: "a.php",
+           data:dataVal,
+           success: function(msg){
+                alert(msg);
+             
+           }
+        }); 
+}
+</script>
+ </body>
+</html>

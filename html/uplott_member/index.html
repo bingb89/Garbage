@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>会员中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css" >
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <section class="media">
+      <a href="http://sctech.uplott.com/member/person"><img src="images/head.jpg" class="img-circle" /></a>
+    </section>
+    <section class="media-body">
+      <h3 class="media-heading pull-left">
+        <p><a href="http://sctech.uplott.com/member/person">用户昵称</a></p>
+        <p><a href="http://sctech.uplott.com/member/points"><img src="images/money.jpg" /><span>1000000000彩豆</span></a></p>
+      </h3>
+      <section class="btns pull-right">
+        <a href="http://sctech.uplott.com/member/person" class="btn btn-warning">详情</a>
+        <a href="#" class="btn btn-warning">签到</a>
+      </section>
+    </section>
+    <br class="clear">
+  </header>
+  <section class="content">
+    <!--emulator模拟投注-->
+    <div class="emulator">
+      <h4 class="title">
+        <b class="pull-left">模拟投注</b>
+        <a href="http://sctech.uplott.com/member/emulator"><span class="pull-right">更多 ></span></a>
+      </h4>
+      <div class="row">
+        <div class="col-xs-4"><a href="http://sctech.uplott.com/act/emulator_ks"><img src="images/em1.jpg" /></a></div>
+        <div class="col-xs-4"><a href="http://sctech.uplott.com/act/emulator_gx_klsf"><img src="images/em2.jpg" /></a></div>
+        <div class="col-xs-4"><a href="http://sctech.uplott.com/act/emulator_animal"><img src="images/em3.jpg" /></a></div>
+        <div class="col-xs-4"><a href="http://sctech.uplott.com/act/emulator_ssq"><img src="images/em4.jpg" /></a></div>
+        <div class="col-xs-4"><a href="http://sctech.uplott.com/act/emulator_fc3d"><img src="images/em5.jpg" /></a></div>
+        <div class="col-xs-4"><a href="http://sctech.uplott.com/act/emulator_sevenlc"><img src="images/em6.jpg" /></a></div>
+      </div>
+    </div>
+    <!--garden彩豆乐园-->
+    <div class="garden">
+      <h4 class="title">
+        <b class="pull-left">彩豆乐园</b>
+      </h4>
+      <div class="gar_t">
+        <div class="row">
+          <div class="col-xs-6"><a href="http://sctech.uplott.com/act/guess"><img src="images/p1.jpg" /></a></div>
+          <div class="col-xs-6"><a href="http://sctech.uplott.com/act/turnplate"><img src="images/p2.jpg" /></a></div>
+          <div class="col-xs-6"><a href="http://sctech.uplott.com/wx_shop"><img src="images/p3.jpg" /></a></div>
+          <div class="col-xs-6"><a href="http://sctech.uplott.com/member/act"><img src="images/p4.jpg" /></a></div>
+        </div>
+      </div>
+      <!--subscribe订阅-->
+      <div class="gar_subscribe">
+        <div class="row">
+          <div class="col-xs-6">
+            <a href="http://hn.uplott.com/wx_subscribe/detail/2">
+              <div class="sub_bg">
+                <h5>双色球开奖订阅</h5>
+                <p>价格：10彩豆</p>
+                <p>有效期：30天</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-xs-6">
+            <a href="http://hn.uplott.com/wx_subscribe/detail/3">
+              <div class="sub_bg">
+                <h5>七乐彩开奖订阅</h5>
+                <p>价格：10彩豆</p>
+                <p>有效期：30天</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-xs-6">
+            <a href="http://hn.uplott.com/wx_subscribe/detail/1">
+              <div class="sub_bg">
+                <h5>3D开奖订阅</h5>
+                <p>价格：10彩豆</p>
+                <p>有效期：30天</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+  </section>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modal.js"></script>
+<script>
+  $(function(){
+    reHeight();
+  });
+  /**窗口自适应**/
+  $(window).resize(function() {
+      reHeight();
+  });
+  /**自适应页面高度**/
+  function reHeight(){
+    var w = $('.media-body').width();
+    var a = $('.media-body h3').width(w - 150);
+  }
+</script>
+</body>
+</html>

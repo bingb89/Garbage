@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>烟花</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="http://www.hiibox.com/js/jquery.fireworks.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+        $('#content-bottom-bg').click(function(){
+                $('#content-bottom').makeFlowers({
+                        'div_id':'div-bottom',
+                        'div_class':'',
+                        'div_num': 20,
+                        'div_width': 1,
+                        'div_height': 1,
+                        'div_bgcolor':'auto',
+                        'div_position_left_max': 5,
+                        'div_position_top_max': 5,
+                        'spread': 0,
+                        'speed_size': [1500,2000],
+                        'fadeout_size': 200,
+                        'to_place':'t'
+                });
+                setTimeout( function(){
+                        $('#content-center').makeFlowers({
+                                'div_id':'div-div_2',
+                                'div_class':'',
+                                'div_num': 200,
+                                'div_width': 1,
+                                'div_height': 1,
+                                'div_bgcolor':'auto',
+                                'div_position_left_max': 5,
+                                'div_position_top_max': 5,
+                                'spread': 1,
+                                'speed_size': [100,10000],
+                                'fadeout_size': 500,
+                                'to_place':''
+                        });
+                }, 1500 * 0.7)
+                setTimeout( function(){
+                        $('#content-center').makeFlowers({
+                                'div_id':'div-div_2',
+                                'div_class':'',
+                                'div_num': 200,
+                                'div_width': 1,
+                                'div_height': 1,
+                                'div_bgcolor':'auto',
+                                'div_position_left_max': 5,
+                                'div_position_top_max': 5,
+                                'spread': 1,
+                                'speed_size': [100,10000],
+                                'fadeout_size': 500,
+                                'to_place':''
+                        });
+                }, 1500)
+        });
+
+        $('#content-left-bg').click(function(){
+                $('#content-left').makeFlowers({
+                        'div_id':'div-left',
+                        'div_class':'',
+                        'div_num': 250,
+                        'div_width': 1,
+                        'div_height': 1,
+                        'div_bgcolor':'auto',
+                        'div_position_left_max': 5,
+                        'div_position_top_max': 5,
+                        'spread': 1,
+                        'speed_size': [500,2000],
+                        'fadeout_size': 800,
+                        'to_place':'r'
+                })
+        });
+        $('#content-top-bg').click(function(){
+                $('#content-top').makeFlowers({
+                        'div_id':'div-top',
+                        'div_class':'',
+                        'div_num': 250,
+                        'div_width': 1,
+                        'div_height': 1,
+                        'div_bgcolor':'auto',
+                        'div_position_left_max': 5,
+                        'div_position_top_max': 5,
+                        'spread': 0,
+                        'speed_size': [2500,200],
+                        'fadeout_size': 300,
+                        'to_place':'b'
+                })
+        });
+        $('#content-right-bg').click(function(){
+                $('#content-right').makeFlowers({
+                        'div_id':'div-right',
+                        'div_class':'',
+                        'div_num':20,
+                        'div_width':1,
+                        'div_height':1,
+                        'div_bgcolor':'auto',
+                        'div_position_left_max':5,
+                        'div_position_top_max':5,
+                        'spread':0,
+                        'speed_size':[1500,2000],
+                        'fadeout_size':300,
+                        'to_place':'l'
+                })
+                setTimeout( function(){
+                        $('#content-center').makeFlowers({
+                                'div_id':'div-center',
+                                'div_class':'',
+                                'div_num':200,
+                                'div_width':1,
+                                'div_height':1,
+                                'div_bgcolor':'auto',
+                                'div_position_left_max':5,
+                                'div_position_top_max':5,
+                                'spread':0,
+                                'speed_size':[100,10000],
+                                'fadeout_size':500,
+                                'to_place':''
+                        })
+                },2000* 0.7)
+                setTimeout( function(){
+                        $('#content-center').makeFlowers({
+                                'div_id':'div-center',
+                                'div_class':'',
+                                'div_num':200,
+                                'div_width':1,
+                                'div_height':1,
+                                'div_bgcolor':'auto',
+                                'div_position_left_max':5,
+                                'div_position_top_max':5,
+                                'spread':0,
+                                'speed_size':[100,10000],
+                                'fadeout_size':500,
+                                'to_place':''
+                        })
+                },2000 )
+        })
+        $("#content-bottom2").mousedown(function(event){
+                $(this).contextmenu(function(){
+                        return false;
+                });
+                if(event.button == 0){
+                        var spread = 1;
+                }else{
+                        var spread = 0;
+                        document.oncontextmenu ='';
+                }
+                $('#content-center').makeFlowers({
+                        'div_id':'div-bg',
+                        'div_class':'',
+                        'div_num': 250,
+                        'div_width': 1,
+                        'div_height': 1,
+                        'div_bgcolor':'auto',
+                        'div_position_left_max': 5,
+                        'div_position_top_max': 5,
+                        'speed_size': [500,2000],
+                        'fadeout_size': 300,
+                        'to_place':'',
+                        'spread':spread
+                })
+        })
+});
+
+</script>
+<style>
+*{
+padding:0;
+margin:0;
+}
+body{
+background:#ddd ;
+}
+.body{
+top:0px;
+left:0px;
+width:100%;
+}
+#content-bg{
+position:absolute;
+top:20px;
+left:300px;
+width:600px;
+height:400px;
+background:#111;
+border:1px solid #111;
+}
+#content-center{
+position:absolute;
+top:200px;
+left:300px;
+width:5px;
+height:5px;
+background:#111;
+border:1px solid #111;
+}
+#content-top-bg{
+position:absolute;
+top:-20px;
+left:300px;
+width:15px;
+height:20px;
+background:#aaa;
+margin:0px 0 0 0px ;
+}
+#content-top{
+position:absolute;
+bottom:0px;
+left:5px;
+width:5px;
+height:5px;
+background:#000;
+margin:0px 0 0 0px ;
+}
+#content-bottom-bg{
+position:absolute;
+top:400px;
+left:300px;
+width:15px;
+height:20px;
+background:#111;
+margin:0px 0 0 0px ;
+border:1px solid #111;
+}
+#content-bottom{
+position:absolute;
+top:0px;
+left:5px;
+width:5px;
+height:5px;
+background:#000;
+margin:0px 0 0 0px ;
+}
+#content-bottom2{
+position:absolute;
+top:400px;
+left:350px;
+width:15px;
+height:20px;
+background:#111;
+margin:0px 0 0 0px ;
+border:1px solid #111;
+}
+#content-right-bg{
+position:absolute;
+top:200px;
+left:600px;
+width:20px;
+height:15px;
+margin:0px 0 0 0 ;
+background:#111;
+border:1px solid #000;
+}
+#content-right{
+position:absolute;
+top:5px;
+left:0px;
+width:5px;
+height:5px;
+background:#000;
+margin:0px 0 0 0px ;
+}
+#content-left-bg{
+position:absolute;
+top:200px;
+left:-22px;
+width:20px;
+height:15px;
+margin:0px 0 0 0 ;
+background:#aaa;
+border:1px solid #000;
+}
+#content-left{
+position:absolute;
+top:5px;
+right:0px;
+width:5px;
+height:5px;
+background:#000;
+margin:0px 0 0 0px ;
+}
+.flower-div-class{
+border-radius:1px;
+}
+.msg{
+position:absolute;
+top:450px;
+height:50px;
+width:100%;
+text-align:center;
+font:12px "宋体";
+color:#111;
+}
+#bottom{
+position:absolute;
+bottom:30px;
+width:100%;
+text-align:center;
+font:12px "宋体";
+color:#999;
+}
+</style>
+</head>
+<body>
+<div class="body" id="body">
+        <div id="content-bg">
+                <div id="content-center"></div>
+                <div id="content-top-bg"><div id="content-top"></div></div>
+                <div id="content-bottom-bg"><div id="content-bottom"></div></div>
+                <div id="content-right-bg"><div id="content-right"></div></div>
+                <div id="content-left-bg"><div id="content-left"></div></div>
+                <div id="content-bottom2" title="左键以及右键"></div>
+        </div>
+        <div class="msg" id="msg"> 点击凸出的区域</div>
+        <div id=copyright style="position:fixed;bottom:30px;right:45%;background:#aaa;opacity:0.5;color:#111;font-size:12px">算法很低级，各种不完善。本人不会算法</p>
+       
+</div>
+</body>
+</html>

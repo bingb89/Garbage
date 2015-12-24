@@ -1,0 +1,15 @@
+jQuery.fn.shake = function(times,offset,delay){
+ this.stop().each(function(){
+	var Obj = $(this);
+	var marginLeft = parseInt(Obj.css('margin-left'));
+	var delay = delay > 20 ? delay : 20;
+	Obj.animate({'margin-left':marginLeft + offset},delay,function(){
+	 Obj.animate({'margin-left':marginLeft},delay,function(){
+		times = times - 1;
+		if(times > 0){
+		 Obj.shake(times,offset,delay);
+		});
+	});
+	});
+	return this;
+}

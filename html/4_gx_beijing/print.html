@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>打印表格</title>
+<link href="css/bootstrap/3.2.0/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome/4.1.0/style/font-awesome.min.css" rel="stylesheet" type="text/css">
+<style>
+body{	
+	font-family:"微软雅黑", "宋体";
+}
+h3{
+	text-align:center;
+	margin-top:5px;
+}
+</style>
+</head>
+<body>
+<table class="table table-bordered table-condensed" style="width:640px;">
+	<thead>
+    	 <tr>
+            <th colspan="3"><h3></h3></th>
+        </tr>
+        <tr>
+            <th>序号</th>
+            <th>昵称</th>            
+            <th>手机</th>       
+        </tr>
+    </thead>
+    <tbody></tbody>       
+</table>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/zj_ssqbj.js"></script>
+<script>
+(function(win,datas){
+	if( ! win.localStorage){
+		alert('亲，你的浏览版本太古远了，无法运行哦！ 请用IE8以上、谷歌浏览器或火狐浏览器运行本程序');
+		return false;
+	}
+
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return unescape(r[2]); return null;
+	}
+
+	//别名
+	var byname = 'zj';
+	var row = 0;
+	var trs = '';
+	var lucknum	= 20;		
+	var backupnum	= 0;
+	
+	
+	var lists = localStorage.getItem(byname + '_exclude');
+	if(!lists)
+	{
+		alert('没有数据');
+		return false;
+	}
+	lists = lists.split(',');
+	if(getQueryString('type') == 1)
+	{
+		$('h3').html('中奖名单');
+		for(var i=0; i < lucknum; i++)
+		{
+			var n = lists[i];
+			trs += '<tr><td>'+(i+1)+'</td><td>'+datas[n]['nickname']+'</td><td>'+datas[n]['phone']+'</td></tr>';
+		}
+	}
+	else
+	{
+		$('h3').html('备选名单');
+		var j = 1;
+		for(var i=lucknum; i < (lucknum + backupnum); i++)
+		{
+			var n = lists[i];
+			trs += '<tr><td>'+j+'</td><td>'+datas[n]['nickname']+'</td><td>'+datas[n]['phone']+'</td></tr>';
+			j++;
+		}
+	}	
+	$('tbody').html(trs);
+	window.print();	
+})(window,datas);
+</script>
+</body>
+</html>

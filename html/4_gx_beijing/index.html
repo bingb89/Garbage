@@ -1,0 +1,558 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>抽奖程序</title>
+<link href="css/bootstrap/3.2.0/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome/4.1.0/style/font-awesome.min.css" rel="stylesheet" type="text/css">
+<style>
+body{
+	/*background:url(images/bg.gif);*/
+	background:#fd5c57;
+	font-family:"微软雅黑", "宋体";
+}
+.random{
+	width:520px;
+	margin:0 auto;
+	border:3px solid #C30;	
+	height:120px;
+	margin-top:20px;
+	font-size:500%;
+	text-align:center;
+	line-height:120px;
+	border-radius : 5px;
+	background:rgba(255,255,255,0.5);    
+	color: transparent;
+  	text-shadow:0 0 6px #F00, -1px -1px  #000, 1px -1px  #444;
+	
+}
+.random.active{
+	margin:0;
+	border:none;
+	border-radius : 0px;
+	background : none;
+	color:#900 !important;
+	text-shadow:none;	
+	padding:0px;	
+	/*font-size:21.5px;*/
+	height:40px;
+	line-height:40px;
+}
+.workbtn{
+	text-align:center;
+	margin-top:15px;
+	margin-bottom:15px;	
+}
+.lists{
+	border:2px solid #F90;
+	background:rgba(255,255,255,0.5);
+	padding:0px 15px;
+	border-radius : 5px;
+}
+.lists h4{
+	text-align:center;
+}
+.lists p{
+	border:1px #ccc dashed;
+	text-align:center;
+	font-size:21.5px;
+	height:40px;
+	line-height:40px;
+	background:rgba(0,0,0,0.2);
+	border-radius : 5px;	
+}
+.lists p.active
+{
+	border:1px solid #FC0;
+	background:rgba(255,0,0,0.4);
+	color:#900;
+}
+.col-xs-3{
+	padding-left:5px !important;
+	padding-right:5px !important;
+}
+/****/
+.top{
+	width: 1002px; 
+	height: 180px; 
+	-webkit-transform: skew(-20deg); 
+	-moz-transform: skew(-20deg); 
+	-o-transform: skew(-20deg); 
+	background: #e4312a;
+	margin: 0 auto;
+	padding-top:10px;
+	position:relative;
+	z-index:1;
+}
+.top_c{
+	background:url(images/bg.png);
+}
+.title{
+	background: url(images/top.png);
+	text-align:center; 
+	height:130px;
+	width:456px;
+	margin:0 auto;
+	text-indent:-9999px;
+}
+.bottom{
+	width: 100%;
+}
+.bg_bottom{
+	background:url(images/bottom.png) 0 0 repeat-x;
+	width: 100%;
+	height: 64px;
+	margin-top:-40px;
+	position:absolute;
+	z-index:2;
+}
+.contents{
+	background:#d22b3f;
+	padding:10px 0 10px 0;
+}
+.workbtn{
+	margin-bottom:0 !important;
+}
+.container-fluid{
+	background:#fbc40f;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+@media (max-width:1440px){
+	.random.active{
+		font-size:15px !important;
+	}
+}
+@media (min-width:1366px){
+	.random.active{
+		font-size:21.5px !important;
+	}
+}
+</style>
+</head>
+<body>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">       
+      </div>
+      <div class="modal-footer">               
+      </div>
+    </div>
+  </div>
+</div>
+<div class="top">
+	<div class="top_c">
+		<h2 class="title">广西福彩转动双色球免费北京游抽奖活动现场</h2>
+	</div>
+</div>
+<div class="bottom">
+	<p class="bg_bottom"></p>
+</div>
+<div class="contents">
+	<div id="random" class="random">开始抽特等奖</div>
+	<div class="workbtn">
+		<button id="start" type="button" class="btn btn-primary btn-lg">开始抽奖</button>
+	    <button id="clear" type="button" class="btn btn-info btn-lg">清空数据</button>
+	    <button id="luckname" type="submit" class="btn btn-warning btn-lg">中奖名单<span id="lucknum"></span></button>    
+	</div>
+</div>
+<div class="container-fluid" id="container">
+	<div class="row">
+    	<!--特等奖-->
+        <div class="col-xs-2">
+            <div class="lists level0">
+                <h4>特等奖(5名)</h4>
+                <div class="row">                    	                                       	
+                </div>        	
+            </div>
+        </div>
+    	<!--特等奖-->
+        <!--一等奖-->
+		<div class="col-xs-2">
+			<div class="lists level1">
+                <h4>一等奖名单(10名)</h4>
+                <div class="row">                    	                                       	
+                </div>        	
+			</div>
+		</div>
+        <!--一等奖-->
+		<div class="col-xs-8">
+			<div class="row"> 
+				<div class="col-xs-5">
+                    <div class="lists level2">
+                        <h4>二等奖名单(20名)</h4>
+                        <div class="row">                    	                                       	
+                        </div>        	
+                    </div>
+                </div>	      
+				<div class="col-xs-7">
+					<div class="lists level3">
+                        <h4>三等奖名单(30名)</h4>
+                        <div class="row">                    		                	
+                        </div>        	
+                    </div>             	
+                </div>
+                     	                             
+			</div>	
+		</div>
+		
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/base.js"></script>
+<script src="js/local.js"></script>
+<script src="js/gx_beijing1.js"></script>
+<script src="js/gx_beijing2.js"></script>
+<script>
+(function(win){
+	var Cjbase = win.Cjbase = function(){
+		//别名
+		this.byname 	= 'gx_beijing';
+		//已抽过奖电话号码本地储存名
+		this.pname		= '_debar';		
+		//已抽奖总数量随机存名
+		this.cname		= '_counts';
+		//显示中奖名单数量总数元素
+		this.luck_element = $('#lucknum');		
+		//显示滚动号码元素
+		this.random_element = $('#random');
+		//循环执行参数
+		this.int 		= 0;
+		//当前随机码
+		this.number 	= '';
+		//当前手机号码
+		this.phone  	= '';		
+		//已抽过奖的电话号码
+		this.debar		= [];
+		//三等奖数量
+		this.level3		= 30;
+		//二等奖数量
+		this.level2		= 20;
+		//一等奖数量
+		this.level1		= 10;
+		//特等奖数量
+		this.level0		= 5;
+		//计数器
+		this.count		= 0;		
+		//机器人1
+		this.robot1	  	= 0;
+		//机器人2
+		this.robot2	  	= 0;
+		//json数据库
+		this.datas		= [];
+		//数据是否切换了
+		this.change		= 0;		
+		//初始化本地储存
+		Q.localData.initDom();			
+	}
+	
+	//设置数据库
+	Cjbase.prototype.set_data = function(data)
+	{
+		this.datas = data;
+	}
+	
+	//设置别名
+	Cjbase.prototype.set_byname = function(byname)
+	{
+		this.byname = byname;
+	}
+	
+	//获取一个0-max之间随机数,并去掉已中奖的手机号码
+	Cjbase.prototype.random_num = function(max)
+	{
+		var number = Math.floor(Math.random()*(max));
+		//去除已中奖的电话号码
+		var phone = this.datas[number].phone;
+		if($.inArray(phone,this.debar) > -1)
+		{
+			number = this.random_num(max);
+		}
+		return number;
+	};
+	
+	//抽奖的数量
+	Cjbase.prototype.nums = function()
+	{
+		//从本地存储里获取已中奖的电话号码
+		var debar 	= Q.localData.get(this.byname + this.pname);
+		if(!debar)
+		{
+			return;
+		}
+		//转化为数组
+		debar	= debar.split(',');
+		//已抽中的数量		
+		var debarnum = debar.length;
+		//奖品
+		var level3,level2,level1,level0;
+		
+		level3 = debar.slice(0,this.level3);
+		level2 = debar.slice(this.level3, this.level3 + this.level2);
+		level1 = debar.slice(this.level3 + this.level2, this.level3 + this.level2 + this.level1);
+		level0 = debar.slice(this.level3 + this.level2 + this.level1, this.level3 + this.level2 + this.level1 + this.level0);
+		this.luck_element.html(" (" + debarnum +") ");				
+	};
+	
+	//开始
+	Cjbase.prototype.start = function()
+	{			
+		var self		= this;		
+		//已抽奖的号码
+		var debar 		= Q.localData.get(this.byname + this.pname);
+		//转化为数组		
+		this.debar 		= debar ? debar.split(',') : [];
+		//最大的长值		
+		var max			= this.datas.length;
+		//开始抽奖
+		this.int 		= setInterval(function(){
+			self.number = self.random_num(max);
+			self.phone	= self.datas[self.number].phone;					
+			self.random_element.html(self.phone);
+		},100);		
+	};
+	
+	//结束
+	Cjbase.prototype.stop = function()
+	{		
+		clearInterval(this.int);
+		var self		= this;		
+		var debar 	= Q.localData.get(this.byname + this.pname);				
+		this.count ++;
+		
+		Q.localData.set(this.byname + '_counts',this.count);
+		
+		if(debar)
+		{
+			Q.localData.set(this.byname + this.pname,debar + ',' +this.phone);
+		}
+		else
+		{
+			Q.localData.set(this.byname + this.pname,this.phone);
+		}
+		//数字		
+		this.nums();					
+	};
+	
+	//暂停抽奖
+	Cjbase.prototype.pause = function()
+	{		
+		clearInterval(this.int);
+		clearTimeout(this.robot1);
+		clearTimeout(this.robot2);
+		$('#pause').replaceWith('<button id="start" type="button" class="btn btn-primary btn-lg">继续抽奖</button>');
+	};
+	
+	//机器人抽奖，自动抽哦
+	Cjbase.prototype.robot = function()
+	{		
+		var self = this;
+		var allcount = this.level0 + this.level1 + this.level2 + this.level3;
+		if(this.count >= allcount)
+		{
+			this.pause();
+			this.random_element.html('抽奖结束');
+			$('#start').replaceWith('<button id="end" type="button" class="btn btn-primary btn-lg">抽奖结束</button>');			
+			return;
+		}
+		this.start();		
+		self.robot1 = win.setTimeout(function(){
+			self.stop();
+			self.draw();			
+			self.robot2 = win.setTimeout(function(){				
+				self.robot();			
+			},1000);						
+		},1000);		
+		$('#start').replaceWith('<button id="pause" type="button" class="btn btn-primary btn-lg">暂停抽奖</button>');				
+	};
+	
+	//动画效果
+	Cjbase.prototype.draw = function()
+	{
+		var self = this;
+		var offset = $('.random').offset();		
+		var phdiv = this.random_element.clone(true);
+		phdiv.removeAttr('id').css({
+			"position"	: "absolute",
+			"z-index"	: "500",
+			"left"		: offset.left + "px",
+			"top"		: offset.top + "px"
+		}).insertAfter('#container');
+		
+		var p = $('#container').find('p').eq(this.count - 1);
+		
+		phdiv.animate({ "left": (p.offset().left) + "px", "top": (p.offset().top) + "px", "width": p.width() + "px", "height": p.height() + "px" }, 500,function(){
+			phdiv.addClass('active');
+			p.addClass('active');
+			//抽完特种奖，切换数据
+			if(self.count >= self.level0 && self.change == 0)
+			{
+				//把数据切换到所有的名单						
+				self.set_data(datas2);
+				self.change = 1;
+				self.pause.call(self);
+				self.random_element.html('开始抽一等奖');
+				win.setTimeout(function(){
+					self.robot.call(self);			
+				},2000);										
+			}					
+		});				
+	};
+	
+	//初始化行
+	Cjbase.prototype.row = function(){
+		var html3='',html2='',html1='',html0='';	
+		var debar 	= Q.localData.get(this.byname + this.pname);
+		debar = debar ? debar.split(',') : [];		
+		for(var i = 0; i < this.level0; i++)
+		{
+			var phone = debar[i] ? debar[i] : '';
+			var classname = phone ? ' class="active"' : '';
+			html0 += '<div class="col-xs-12"><p'+classname+'>'+phone+'</p></div>';
+		}
+		var count1 = this.level0 + this.level1;
+		for(i = this.level0; i < count1; i++)
+		{
+			phone = debar[i] ? debar[i] : '';
+			classname = phone ? ' class="active"' : '';
+			html1 += '<div class="col-xs-12"><p'+classname+'>'+phone+'</p></div>';
+		}
+		
+		var count2 = count1 + this.level2;
+		for(i =  count1; i < count2; i++)
+		{
+			phone = debar[i] ? debar[i] : '';
+			classname = phone ? ' class="active"' : '';
+			html2 += '<div class="col-xs-6"><p'+classname+'>'+phone+'</p></div>';
+		}
+		
+		var count3 = count2 + this.level3;
+		
+		for(i = count2; i < count3; i++)
+		{
+			phone = debar[i] ? debar[i] : '';
+			classname = phone ? ' class="active"' : '';
+			html3 += '<div class="col-xs-4"><p'+classname+'>'+phone+'</p></div>';
+		}
+				
+		$('.level3 .row').html(html3);
+		$('.level2 .row').html(html2);
+		$('.level1 .row').html(html1);
+		$('.level0 .row').html(html0);		
+	};
+	
+	//清空数据
+	Cjbase.prototype.clear = function()
+	{		
+		Q.localData.remove(this.byname + this.pname);
+		Q.localData.remove(this.byname + this.cname);				
+		location.reload();	
+	};
+	
+	//休瞑，一点效果都没有
+	Cjbase.prototype.sleep = function(n)
+	{
+		var start = new Date().getTime();
+		while(true)  if(new Date().getTime()-start > n) break;
+	}	
+	
+	//根据ID获取所在的索引
+	Cjbase.prototype.get_by_id = function(id)
+	{
+		var i = 0;
+		for(var o in this.datas){
+			if(this.datas[o]['id'] == id)
+			{				
+				break;				
+			}
+			i++;
+      	}
+		return i;		
+	};
+	
+	//获取中奖名单
+	Cjbase.prototype.namelists = function()
+	{
+		var self = this;
+		var lists = Q.localData.get(this.byname + this.pname);
+		if( ! lists)
+		{
+			alert('还没有数据');
+			return;
+		}
+		$.ajax('http://10.0.0.222/uplott2.0/autoplan/gx_beijing/namelists',{
+			type  : 'POST',
+			data  : {phone : lists},
+			cache : false,
+			dataType : 'jsonp',  
+        	jsonp:"jsoncallback"
+		}).done(function(data){
+			//ajax生成表格后，下载每一期的中奖名单
+			alert('这里要开发一下');
+		});					
+	};	
+	
+	//初始化	
+	Cjbase.prototype.init = function()
+	{
+		//初始化
+		this.nums();		
+		this.row();
+		this.count = Q.localData.get(this.byname + this.cname) ? Q.localData.get(this.byname + this.cname) : 0;
+		var allcount = this.level0 + this.level1 + this.level2 + this.level3;
+		//初始化按钮
+		if(this.count > 0 && this.count < allcount)
+		{		
+			this.random_element.html('继续抽奖');
+			$('#start').html('继续抽奖');
+		}
+		else if(this.count >= allcount)
+		{
+			this.random_element.html('抽奖结束');
+			$('#start').replaceWith('<button id="end" type="button" class="btn btn-primary btn-lg">抽奖结束</button>');
+		}	
+		
+		var self = this;		
+		//点击开始按钮/继续
+		$(document).on('click','#start',function(){			
+			self.robot.call(self);	
+		});
+		
+		//点击暂停按钮
+		$(document).on('click','#pause',function(){
+			self.pause.call(self);	
+		});
+		
+		//点击清除按钮
+		$(document).on('click','#clear',function(){
+			 if(confirm("清空数据将会清空所有的数据，你确定吗？"))
+			 {
+				 self.clear.call(self);
+			 }			
+		});
+		
+		$('#luckname').click(function(){
+			function excel(){
+				var excel_phone = $('#container .row p').text();
+				alert(excel_phone);
+			}
+			excel();
+			
+			self.namelists.call(self);								
+		});						
+	};
+
+})(window);
+var cc = new Cjbase();
+cc.set_data(datas1);
+cc.init();
+</script>
+</body>
+</html>

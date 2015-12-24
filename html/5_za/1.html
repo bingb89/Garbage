@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>iRock-The Virtual Pet Rock</title>
+        <script type="text/javascript" src="script/jquery.js"></script>
+        <script type="text/javascript">
+            function moveBox(direction){
+                var box = $("#box");
+ 
+                // 判断是否处于动画中
+                if(box.is(":animated")){   
+                    return;
+                }
+ 
+                var l = box.offset().left, t = box.offset().top, left = l, top = t;
+                var off = 150;
+ 
+                switch(direction){
+                    case Direction.Left:
+                        left += -off;
+                        break;
+                    case Direction.Right:
+                        left += off;
+                        break;
+                    case Direction.Up:
+                        top += - off;
+                        break;
+                    case Direction.Down:
+                        top += off;
+                        break;
+                }
+ 
+                 
+                box.animate({left: left , top: top + "px"}, "slow", //left, top的设置, 加不加"px"都可以
+                    // 动画结束后的回调函数
+                    function(){   
+                        // 随机生成RGB
+                        var rgb = [];
+                        for(var i=0; i<3; i++)
+                            rgb.push(Math.floor(Math.random() * 255));                       
+ 
+                        box.css({"background-color": "rgb(" + rgb.join(",") + ")"});
+                    }
+                );
+            }
+ 
+            var Direction = {
+                Left: 0,
+                Right: 1, 
+                Up: 2, 
+                Down: 3
+            };
+        </script>
+    </head>
+    <body>
+        <div id="box" style="position:absolute;left:400px;top:400px;width:100px;height:100px;border:solid 1px black;"></div>
+ 
+        <button onclick="moveBox(Direction.Left);">left</button>
+        <button onclick="moveBox(Direction.Right);">right</button>
+        <button onclick="moveBox(Direction.Up);">up</button>
+        <button onclick="moveBox(Direction.Down);">down</button>
+    </body>
+</html>

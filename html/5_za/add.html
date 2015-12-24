@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>添加收藏夹</title>
+<script type="text/javascript" src="jquery.js"></script>
+<style>
+body{ font-size:12px;}
+*{ padding:0; margin:0;}
+</style>
+</head>
+<body>
+<script>
+if($.cookie("NLRAF")==null){if(!$("#afps").length){$("head").append('<style id="afps" type="text/css" media="screen">#afp{background-color:#ffe;border-bottom:1px solid #ddd;}#afp .afpc{width:960px;margin-left:auto;margin-right:auto;position:relative}#afp p{text-align:center;height:32px;line-height:32px}#afp .afpa{color:#09c;font-family:Arial;}#af{font-weight:bold;}#cafp{position:absolute;right:10px;top:8px;width:16px;height:16px;overflow:hidden;text-indent:-9999em;background:url(share_close.png) no-repeat 3px 3px}#cafp:hover{background-position:-30px 3px}#nlraf{color:#999;text-decoration:underline}</style>')}
+
+if(!$("#afp").length){$("body").prepend('<div id="afp"><div class="afpc"><p>按 <span class="afpa">Ctrl + D</span> 把百度 <a id="af" class="afpa" href="javascript:void(0)" onclick="addFavorite(true)">加入收藏夹</a>，下次访问更方便！<a id="nlraf" href="javascript:void(0)" onclick="CloseNLRAF(true)">不再提醒</a></p><a id="cafp" href="javascript:void(0)" onclick="CloseNLRAF(false)">&times;</a>	</div></div>')}}
+
+function addFavorite(b){CloseNLRAF(true);var a=null;if(b=="childreTop"){var a="http://baidu.com"}else{var a=location.href+(b==true?"?from=topfavorite":"")}if($.browser.msie){window.external.addFavorite(a,"把百度")}else{if($.browser.mozilla){window.sidebar.addPanel("把百度",a,"")}else{alert("请按键盘 CRTL键 + D 收藏把百度")}}return false}
+function CloseNLRAF(a){if(a){$.cookie("NLRAF","true",{path:"/",expires:30,domain:_domain})}
+else{$.cookie("NLRAF","true",{path:"/",domain:_domain})}$("#afp").slideUp()}
+</script>
+</body></html>

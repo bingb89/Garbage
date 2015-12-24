@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+/**reset**/
+html{color:#000;background:#FFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,
+input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+a,img{border:0;}
+a{text-decoration:none;}
+a:link,a:visited,a:hover,a:active{color:#666;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,textarea,select{*font-size:100%;}
+legend{color:#000;}
+body{font-family:Aria,"微软雅黑"; overflow-x:hidden;}
+.clear{clear:both; height:0;}
+/**media**/
+
+
+/**header**/
+header{ width:100%; height:100px; *margin-bottom:22px; background:#ffffff;}
+.row{ width:1020px; margin:30px auto;}
+.row .colums{ width:100%; positon:relative; float:left;}
+.row .logo{ float:left; margin-top:17px; width:215px; height:65px;}
+.row nav{float:right; position:relative; top:23px; font-family: "微软雅黑"}
+.row nav li{ position:relative; display:inline; float:left;}
+.row nav li a{ font-size:16px; color:#787878; display:block; padding:17px 20px;}
+.row nav li a:hover{ background:#6dc5dd;color:#fff;border-radius:10px; transition: all 1s ease-in-out;}
+.row nav li a.active{ background:#6dc5dd;color:#fff;border-radius:10px; }
+#menu-icon{ display:none;}
+/**slide**/
+#banner{background:url(../images/bg.jpg) repeat-x; width:100%;}
+#Big_Slide_box{ width:1020px; margin:0 auto; overflow:hidden; }
+#Big_Slide{width:1020px;position: relative; margin:0 auto; height:397px;}
+#Big_Slide ul li{width:1020px; height:397px; position: absolute;}
+#Big_Slide_Last,#Big_Slide_Next{width:46px; height:40px; color:#333; font-size:18px; position: absolute;z-index:9999; cursor:pointer; opacity:0.5;}
+#Big_Slide_Last:hover,#Big_Slide_Next:hover{opacity:1;}
+#Big_Slide_Last{left:0px; background:url(../images/icons.png) 0 -101px no-repeat;}
+#Big_Slide_Next{right:0px; background:url(../images/icons.png) 20px -141px no-repeat;}
+#Big_Slide .prev{position:absolute; width:1020px; height:397px;background:url(../images/bg.jpg) repeat-x; top:0px; z-index:99;}
+.scroll-news{ line-height:60px; height:60px; *padding-bottom:30px;}
+.scroll-news h2{ padding:0px 30px; background:#e5e5e5; float:left;}
+#news{ padding-left:30px; height:60px; overflow: hidden;}
+#news a{color:#494949; display:block}
+.colorR{ color:#e81710;}
+figure{ margin:0; float:left; width:462px;}
+figcaption{float:right; width:488px; }
+figcaption p{color:#f7ae5e; line-height:30px;}
+.icons{  width:488px; height:100px; margin:50px 0; }
+#icon-a,#icon-b,#icon-c{  width:85px; display:block; float:left; margin-right:50px; height:92px; background:url(../images/icons.png) no-repeat;}
+#icon-a{ background-position:0 0;}
+#icon-a:hover{ background-position:-79px -105px;}
+#icon-b{ background-position:-162px 0;}
+#icon-b:hover{ background-position:-241px -105px;}
+#icon-c{ background-position:-324px 0;}
+#icon-c:hover{ background-position:-403px -105px;}
+/**content**/
+.row[class*="item-wrap"]{ width:33.3%;}
+.row[class*="case-wrap"]{ width:25%;}
+.row h3{color:#7b7777; font-size:18px; margin-bottom:30px; padding-top:30px; border-top:1px solid #d4d4d4; }
+.item-wrap{  float:left; position:relative; width:320px; height:268px; margin:0 30px 30px 0; margin:0 10px\9; *margin:0 10px;-moz-box-shadow: 0 0 8px rgba(72, 106, 170, 0.5);-webkit-box-shadow: 0 0 8px rgba(72, 106, 170, 0.5);box-shadow: 0 0 8px rgba(72, 106, 170, 0.5); z-index:1;}
+.item-wrap:last-child{margin-right:0;}
+.item-wrap .item-info{ position:absolute; float:left; bottom:-1px; left:0; width:320px; height:47px; line-height:47px; background:#1cc569; z-index:999999; }
+.item-wrap .item-info a{ padding-left:20px; color:#fff; font-size:14px;}
+.cases{ width:100%; margin:30px 0; background:#e6e6e6; padding:30px 0; border-bottom:1px solid #c5c5c5;}
+.case-wrap{ float:left; width:232px; height:146px; position: relative; margin:0 30px 30px 0; *margin:10px; margin:10px\9;}
+.case-wrap:nth-child(4){margin-right:0;}
+.case-wrap:nth-child(8){margin-right:0;}
+.cases h3{margin-bottom:0;}
+/**footer**/
+footer{width:100%;background:#272728;height:120px;}
+footer .row{ margin-top:0;}
+footer .foot-logo{ float:left;margin-top:30px;}
+address{float:right;margin-top:20px; font-size:14px; color:#b6b1b1; line-height:30px;}

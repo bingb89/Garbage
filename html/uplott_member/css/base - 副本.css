@@ -1,0 +1,38 @@
+@charset "UTF-8";
+body { font-family:"微软雅黑"; }
+html,body {position:relative; overflow-x:hidden; height:100%; background:#e5e5e5}
+ul,li{ list-style:none; margin:0; padding:0; }
+a:hover,a:active,a:link,a:visited{ text-decoration:none; }
+.clear{ clear:both; }
+.container{ padding:0; }
+header{ background:#59aea7; padding:10px;}
+header .media{ float:left; width:20%; margin-right:15px;}
+header .maidia a{ border:3px solid #fff; vertical-align:middle; width:100%; height:100%; border-radius:50%; }
+header .media img{ border:3px solid #fff; vertical-align:middle; width:100%; height:100%; border-radius:50%; }
+header .media-body{ float:right; padding-top:3%; width:75%; }
+header .media-body p a{ color:#fff;  }
+header .media-body h3{ font-size:18px; color:#fff; }
+header .media-body h3 img{ width:20px; height:17px; }
+header .media-body h3 span{ font-size:12px; font-weight: normal; word-break:break-all;}
+header .media-body .btns{ width:140px;}
+header .media-body .btns a{ float:left; margin:5px; padding:5px 15px; }
+.content img{ width:100%; }
+.emulator,.garden{ background:#fff; }
+.title{ color:#ffa43b; margin:0; margin-top:6px; font-size:13px; border-bottom:1px solid #ececec; height:40px; line-height:40px; }
+.title b{ border-left:8px solid #ffa43b; font-size:16px; font-weight:bold; padding-left:10px; }
+.title span{ margin-right:10px; }
+.emulator .title span { color: #ffa43b; }
+.emulator .row{ margin:0; }
+.emulator .col-xs-4{ border-right:1px solid #ececec; border-bottom:1px solid #ececec; text-align:center;}
+.emulator .col-xs-4:nth-child(4),.emulator .col-xs-4:nth-child(5),.emulator .col-xs-4:nth-child(6){ border-bottom:none; }
+.garden .title{ color:#fe601f; }
+.garden .title b{ border-left:8px solid #fe601f; }
+.gar_t{ padding:10px 15px 0 15px; }
+.gar_t .col-xs-6{ margin-bottom:10px; padding:0 5px; }
+.gar_t .col-xs-6:nth-child(odd),.gar_subscribe .col-xs-6:nth-child(odd){ padding-left:10px; }
+.gar_t .col-xs-6:nth-child(even),.gar_subscribe .col-xs-6:nth-child(even){ padding-right:10px; }
+.gar_subscribe{ padding:0 15px; }
+.sub_bg{ background:url(../images/sub_bg.jpg) 2px 28px no-repeat; border:1px solid #f4d59f; padding:10px; background-size:contain;}
+.sub_bg h5{ color:#F5B126; margin-top:0; font-size:16px; }
+.sub_bg p{ color:#666; margin-bottom:0;}
+.gar_subscribe .col-xs-6{ padding:5px;}

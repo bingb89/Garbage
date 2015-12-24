@@ -1,0 +1,143 @@
+@charset "UTF-8";
+html,body { position: relative; height: 100%; overflow: hidden;}
+ul,li{list-style: none;}
+body { font-family:"微软雅黑"; position:relative; background:url(../images/bg.jpg) 0 0 no-repeat; background-size:cover;}
+header h3{ background:url(../images/icon.png) 0 0 no-repeat; width:154px; height:54px; margin:10px !important;}
+.wrapper .main{ position:relative; background:transparent; border-radius:10px; margin:0 10px;}
+.wrapper .main_t{ position:relative; z-index:2; margin:auto; width:100%; border-top-left-radius:10px; border-top-right-radius:10px; overflow-x:auto; overflow-y:hidden; height:104px; } 
+.wrapper h4{ position:relative; z-index:3; top:-14px; width:248px; margin:auto; height:100px; background:url(../images/icon.png) -181px 0; }
+.wrapper .main_c{ position:absolute; top:106px; width:100%; z-index:1; margin-top:-10px; text-align:center; }
+.wrapper .main_c a{ display: block; margin:10px; }
+.wrapper .main_c .role{ background:url(../images/icon.png) 0 -60px; }
+.wrapper .main_c .role:hover{ background:url(../images/icon.png) 0 -116px; }
+.wrapper .main_c .list{ background:url(../images/icon.png) 0 -177px;}
+.wrapper .main_c .list:hover{ background:url(../images/icon.png) 0 -233px;}
+.wrapper .main_c .start{ background:url(../images/icon.png) 0 -296px;}
+.wrapper .main_c .start:hover{ background:url(../images/icon.png) 0 -352px;}
+.role_c { line-height:24px; }
+.role_c h2{ font-size:15px; margin-top:0; color:#D31A43; line-height:24px; }
+.role_c h3{ font-size:14px; margin:0;  background:#D31A43; border-top-left-radius:6px; border-top-right-radius:6px; color:#fff; padding:10px; }
+.role_c p{ border:1px solid #e3e3e3; padding:10px; border-top:none; font-size:13px;}
+.bg1{ position:relative; overflow:auto; background:url(../images/bg1.jpg) 0 0 no-repeat; background-size:cover; }
+.bg1 .main{ position:relative; z-index:8888; margin:auto 10px;}
+.bg1 .main .jiang_c{ position:absolute; }
+.lists{ margin:auto; text-align:center; margin-bottom:10px; z-index:1; position:relative;}
+.rank{ position:absolute; text-shadow:0 1px 1px #fccb15; color:#ff0000; width:80px; font-size:20px; text-align:center; left:50%; top:10%; margin-left:-40px;}
+.share{ margin-top:-9px; }
+.tip{ color:#d6000f; border-bottom:1px dashed #d6000f; padding-bottom:5px; margin-bottom:5px;}
+.tip span{font-weight: bold;}
+.sur{ color:#d5155e; }
+.tips{ margin:10px; border:2px dashed #f9e71d; background:#d5155e; border-radius:10px; padding:10px; color: #f9e71d; }
+.tips .already{ display:none; }
+.list_page{ margin: auto; padding:5px;}
+.list_c{ padding:10px 10px 0 10px; box-shadow:2px 2px 2px #333; border:2px solid #fbc2bf; background:#F3635C; border-radius:10px; overflow:scroll;}
+.list_c .table{ margin-bottom:10px !important; }
+.list_c p{ margin:0; text-shadow:1px 1px 1px #333; font-weight:bold; color:#F9EF67;}
+.bot{ margin:10px auto; width:82px;}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{ border:none !important; background:#F9C16E; text-align: center;}
+tr{ border:1px solid #F3635C;}
+tr td,tr th{ white-space:nowrap; }
+#modal_list{ z-index:99999999999999999 }
+#mscover { display: none;}
+#mscover { position: absolute; top: 0; left: 0;width: 100%;height: 100%; background: rgba(0, 0, 0, 0.7); display: none; z-index: 20000;}
+#mscover img { position: absolute; right: 6px; top: 10px; width: 318px!important; height: 256px!important; z-index: 20001;}
+/*转盘*/
+.zhuan{ position:relative;text-align:center; height:auto; min-height:300px; max-height:400px; overflow: hidden;}
+.zhuan .default{ left:50%; position:absolute;}
+.ly-plate{ display:none;  }
+.lottery-star img{ width:94px; height:128px; position: absolute; z-index:3;left:50%; }
+.rotate-bg img{ position:absolute; z-index:2; left:50%; }
+/*弹动效果*/
+.ballDown {-webkit-animation:ballDown 1s;animation:ballDown 1s;}
+.ballLeft { -webkit-animation: ballLeft 1s; animation: ballLeft 1s;}
+.ballRight {-webkit-animation: ballRight 1s; animation: ballRight 1s;}
+.ballUp {-webkit-animation: ballUp 1s; animation: ballUp 1s;}
+@-webkit-keyframes ballDown {
+    0% { opacity: 0; -webkit-transform: translate3d(0, -3000px, 0); transform: translate3d(0, -3000px, 0) }
+    40% { opacity: 1; -webkit-transform: translate3d(0, 25 px, 0); transform: translate3d(0, 25 px, 0)}
+    75% { -webkit-transform: translate3d(0, -10 px, 0); transform: translate3d(0, -10 px, 0)}
+    90% { -webkit-transform: translate3d(0, 5 px, 0); transform: translate3d(0, 5 px, 0) }
+    100% { -webkit-transform: none; transform: none }
+}
+@keyframes ballDown {
+    0% { opacity: 0; transform: translate3d(0, -3000px, 0); transform: translate3d(0, -3000px, 0)}
+    40% { opacity: 1; transform: translate3d(0, 25 px, 0); transform: translate3d(0, 25 px, 0)}
+    75% { transform: translate3d(0, -10 px, 0); transform: translate3d(0, -10 px, 0) }
+    90% { transform: translate3d(0, 5 px, 0); transform: translate3d(0, 5 px, 0)}
+    100% { transform: none; transform: none}
+}
+@-webkit-keyframes ballLeft {
+    0% { opacity: 0; -webkit-transform: translate3d(-3000px, 0, 0); transform: translate3d(-3000px, 0, 0)}
+    40% { opacity: 1; -webkit-transform: translate3d(25px, 0, 0); transform: translate3d(25px, 0, 0) }
+    75% { -webkit-transform: translate3d(-10px, 0, 0); transform: translate3d(-10px, 0, 0)}
+    90% { -webkit-transform: translate3d(5px, 0, 0); transform: translate3d(5px, 0, 0)}
+    100% {-webkit-transform: none; transform: none}
+}
+@keyframes ballLeft {
+    0% {opacity: 0; transform: translate3d(-3000px, 0, 0); transform: translate3d(-3000px, 0, 0)}
+    40% { opacity: 1; transform: translate3d(25px, 0, 0);transform: translate3d(25px, 0, 0)}
+    75% { transform: translate3d(-10px, 0, 0); transform: translate3d(-10px, 0, 0)}
+    90% { transform: translate3d(5px, 0, 0); transform: translate3d(5px, 0, 0)}
+    100% { transform: none; transform: none}
+}
+@-webkit-keyframes ballRight {
+    0% { opacity: 0; -webkit-transform: translate3d(3000px, 0, 0); transform: translate3d(3000px, 0, 0)}
+    40% { opacity: 1; -webkit-transform: translate3d(-25px, 0, 0);transform: translate3d(-25px, 0, 0)}
+    75% { -webkit-transform: translate3d(10px, 0, 0); transform: translate3d(10px, 0, 0)}
+    90% { -webkit-transform: translate3d(-5px, 0, 0); transform: translate3d(-5px, 0, 0)}
+    100% {-webkit-transform: none;  transform: none}
+}
+@keyframes ballRight {
+    0% {  opacity: 0; transform: translate3d(3000px, 0, 0); transform: translate3d(3000px, 0, 0)}
+    40% { opacity: 1; transform: translate3d(-25px, 0, 0); transform: translate3d(-25px, 0, 0)}
+    75% { transform: translate3d(10px, 0, 0); transform: translate3d(10px, 0, 0)}
+    90% { transform: translate3d(-5px, 0, 0); transform: translate3d(-5px, 0, 0)}
+    100% { transform: none; transform: none }
+}
+@-webkit-keyframes ballUp {
+    0% {opacity: 0; -webkit-transform: translate3d(0, 3000px, 0);transform: translate3d(0, 3000px, 0)}
+    40% { opacity: 1;-webkit-transform: translate3d(0, -20px, 0);transform: translate3d(0, -20px, 0)}
+    75% { -webkit-transform: translate3d(0, 10px, 0); transform: translate3d(0, 10px, 0)}
+    90% { -webkit-transform: translate3d(0, -5px, 0); transform: translate3d(0, -5px, 0)}
+    100% { -webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0)}
+}
+@keyframes ballUp {
+    0% { opacity: 0; transform: translate3d(0, 3000px, 0); transform: translate3d(0, 3000px, 0) }
+    40% { opacity: 1; transform: translate3d(0, -20px, 0); transform: translate3d(0, -20px, 0) }
+    75% { transform: translate3d(0, 10px, 0); transform: translate3d(0, 10px, 0)}
+    90% { transform: translate3d(0, -5px, 0);transform: translate3d(0, -5px, 0)}
+    100% { transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0)}
+}
+@media (min-width:320px){
+    .bg1 .main .jiang_c{ top:50px; padding:26px 26px 0 26px; font-size:12px; }
+    .default{ width:300px; margin-left:-150px; }
+    .rotate-bg img{ width:300px; margin-left:-150px; }
+    .lottery-star img{ top:22%; margin-left:-45px;}
+    .zhuan{height:300px;}
+}
+@media (min-width:360px) and (max-width:375px){
+    .bg1 .main .jiang_c{ top:55px; padding:35px 35px 0 35px; font-size:14px; }
+    .default{ width:340px; margin-left:-170px; }
+    .rotate-bg img{ width:340px; margin-left:-170px; }
+    .lottery-star img{ top:26%;}
+    .zhuan{height:340px;}
+}
+@media (min-width:375px){
+    .default{ width:356px; margin-left:-178px; }
+    .rotate-bg img{ width:356px; margin-left:-178px; }
+    .lottery-star img{ top:27%;}
+    .zhuan{height:356px;}
+}
+@media (min-width:384px) and (max-width:1024px){
+    .bg1 .main .jiang_c{ top:62px; padding:35px 35px 0 35px; font-size:15px; }
+    .default{ width:364px; margin-left:-182px; }
+    .rotate-bg img{ width:364px; margin-left:-182px; }
+    .lottery-star img{ top:28%;}
+    .zhuan{height:364px;}
+}
+@media (min-width:414px){
+    .default{ width:400px; margin-left:-200px; }
+    .rotate-bg img{ width:400px; margin-left:-200px; }
+    .lottery-star img{ top:28%;}
+    .zhuan{height:400px;}
+}

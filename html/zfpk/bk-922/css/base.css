@@ -1,0 +1,15 @@
+@charset "UTF-8";
+body { font-family:"微软雅黑";background: #bd9847 url(../images/bg-icon.png) 0 0 repeat;}
+html,body {position: relative; height: 100%;}
+ul,li {list-style: none;}
+.head{ position:fixed; margin:auto; left:0; right:0; top:-10px; bottom:0; width:320px; z-index:99;}
+.head h4{ text-indent:-9999999px; width:100%; height:113px; background:url(../images/bg_h4.png) 0 0 no-repeat; }
+#bm{position:absolute; top:80px; left:36%;}
+.center{text-align:center;}
+
+.role { width:320px; margin:0 auto; position:relative; top:110px; left:0px;}
+.bg_bot{ margin:11px; margin-top:-15px;background:url(../images/bg_bot.jpg) 0 0 repeat-x; height:26px;}
+.role_cc{ margin:11px; margin-top:-10px; padding:10px 40px; background:url(../images/bg_c.jpg) 0 0 repeat-y; }
+.role_cc p{font-size:14px; line-height:25px; font-family:"微软雅黑"; }
+.role_cc span{ width:100%; padding-left:10px; display:inline-block; border-bottom:2px dashed #bd0007; margin-bottom:10px; line-height:30px; color:#bd0007; font-weight: bold; }
+#modal_submit p span.red{ color:#fa120a; font-weight:bold; margin-bottom:5px; display:block; }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>微套餐</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header class="deta_header p10 mb10">
+      <div class="bor fl w48p">
+        <select class="form-control select_num">
+          <option>订单编号</option>
+          <option>123456</option>
+          <option>213456</option>
+          <option>254621</option>
+          <option>999999999</option>
+        </select>
+      </div>
+      <div class="fr fr w48p">
+        <input type="text" class="form-control posi_r" placeholder="输入文本">
+        <span class="glyphicon glyphicon-search posi_a search"></span>
+      </div>
+    </header>
+    <section>
+      <table class="table bgf tc">
+        <thead>
+          <tr class="bf5">
+            <td>期号</td>
+            <td>出票时间</td>
+            <td>中奖情况</td>
+            <td>详情</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bf2">
+            <td>01</td>
+            <td>2015/4/25</td>
+            <td>中奖</td>
+            <td><a href="#" class="oran prize">一等奖</a></td>
+          </tr>
+          <tr class="bd9">
+            <td>02</td>
+            <td>2015/4/28</td>
+            <td>中奖</td>
+            <td><a href="#" class="oran prize">二等奖</a></td>
+          </tr>
+          <tr class="bd9">
+            <td>03</td>
+            <td>2015/4/28</td>
+            <td>中奖</td>
+            <td><a href="#" class="oran prize">三等奖</a></td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td>2015/4/28</td>
+            <td>未中奖</td>
+            <td><a href="#" class="oran prize">未中奖</a></td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td>2015/4/28</td>
+            <td>未中奖</td>
+            <td><a href="#" class="oran prize">未中奖</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <br class="cl">
+      <p class="tc mt10"><a href="index.html" class="btn_sm btn_lar btn_gr">返回</a></p>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/modal.js"></script>
+    <script>
+    var option = {
+      "size": "small",
+      "body": '<table class="table tl table_deal"><tbody><tr><td>期号：</td><td>01</td></tr><tr><td>出票时间：</td><td>2015/4/25</td></tr><tr><td>扣款金额：</td><td>100元</td></tr><tr><td>订单金额：</td><td>100元</td></tr><tr><td>本期开奖号码：</td><td><em class="red_ball mr10">02 04 08 13 16 32</em><em class="blue_ball">33</em></td></tr><tr><td>中奖奖等：</td><td>三等奖</td></tr></tbody></table>',
+      "url": "/",
+      }
+      Modal.init(option);
+      $(function(){
+        /**提现**/
+        $('.prize').click(function(){
+          $('.modal').modal();
+        });
+      });
+    </script>
+  </body>
+</html>
