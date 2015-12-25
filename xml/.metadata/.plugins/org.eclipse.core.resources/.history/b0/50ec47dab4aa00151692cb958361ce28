@@ -1,0 +1,20 @@
+package com.example.frame;
+
+import android.content.Context;
+import android.view.View;
+
+public class MeziView extends View {
+	
+	//定义相关变量
+	public float bitmapX;
+	public float bitmapY;
+	
+	public MeziView(Context context){
+		
+		super(context);
+		
+		bitmapX = 0;
+		bitmapY = 200;
+	}
+		
+}

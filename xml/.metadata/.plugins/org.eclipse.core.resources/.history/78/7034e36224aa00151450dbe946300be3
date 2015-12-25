@@ -1,0 +1,7 @@
+<TableLayout  
+    android:id="@+id/TableLayout2"  
+    android:layout_width="fill_parent"  
+    android:layout_height="wrap_content"
+    android:collapseColumns="0,2">
+    
+</TableLayout>

@@ -1,0 +1,21 @@
+package com.example.frame;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+public class MeziView extends View {
+	
+	public float bitmapX;
+	public float bitmapY;
+	
+	public MeziView(Context context){
+		
+		super(context);
+		
+		bitmapX = 0;
+		bitmapY = 0;
+	}
+		
+}

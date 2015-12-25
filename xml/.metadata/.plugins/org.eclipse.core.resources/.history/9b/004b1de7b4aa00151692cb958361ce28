@@ -1,0 +1,21 @@
+package com.example.frame;
+
+import android.content.Context;
+import android.view.View;
+
+public class MeziView extends View {
+	
+	//定义相关变量，图像的X,Y坐标
+	public float bitmapX;
+	public float bitmapY;
+	
+	public MeziView(Context context){
+		
+		super(context);
+		
+		//设置图像的起始坐标
+		bitmapX = 0;
+		bitmapY = 200;
+	}
+		
+}

@@ -1,0 +1,36 @@
+package com.example.frame;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.FrameLayout;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		//定义变量
+		FrameLayout frame = (FrameLayout) findViewById(R.id.mylayout);  
+        final MeziView mezi = new MeziView(MainActivity.this);  
+        
+       //为我们的图像子添加触摸事件监听器  
+        mezi.setOnTouchListener(new OnTouchListener() {  
+            @Override  
+            public boolean onTouch(View view, MotionEvent event) {  
+                //设置妹子显示的位置  
+                mezi.bitmapX = event.getX() - 150;  
+                mezi.bitmapY = event.getY() - 150;  
+                //调用重绘方法  
+                mezi.invalidate();  
+                return true;  
+            }  
+        });  
+        frame.addView(mezi);  
+	}
+
+	
+}
